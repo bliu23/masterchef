@@ -1,0 +1,66 @@
+.title-large {
+	font-weight: 800;
+	font-size: 24px;
+}
+
+.title-medium {
+	font-weight: 800;
+	font-size: 18px;
+}
+
+.title-small {
+	font-weight: 800;
+	font-size: 14px;
+}
+
+.title-secondary-large {
+	font-weight: 800;
+	font-size: 24px;
+	color: gray;
+}
+
+.title-secondary-medium {
+	font-weight: 800;
+	font-size: 18px;
+	color: gray;
+}
+
+.title-secondary-small {
+	font-weight: 800;
+	font-size: 14px;
+	color: gray;
+}
+
+.font-large {
+	font-weight: 300;
+	font-size: 24px;
+}
+
+.font-medium {
+	font-weight: 300;
+	font-size: 18px;
+}
+
+.font-small {
+	font-weight: 300;
+	font-size: 14px;
+}
+
+.font-secondary-large {
+	font-weight: 300;
+	font-size: 24px;
+	color: gray;
+}
+
+.font-secondary-medium {
+	font-weight: 300;
+	font-size: 18px;
+	color: gray;
+}
+
+.font-secondary-small {
+	font-weight: 300;
+	font-size: 14px;
+	color: gray;
+}
+
