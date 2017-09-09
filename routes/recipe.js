@@ -1,10 +1,11 @@
 var express = require('express');
 var router = express.Router();
+var url = require('url');
 
 var mongodb = require('mongodb');
 var uri = 'mongodb://gordon:ramsay@ds127564.mlab.com:27564/masterchef';
 
-router.post('/addRecipe', function(req, res) {
+router.post('/addRecipe', function (req, res) {
 	mongodb.MongoClient.connect(uri, function (err, db) {
 		if (err) {
 			throw err;
@@ -36,20 +37,47 @@ router.post('/addRecipe', function(req, res) {
 });
 
 // /recipes?param0=foo&param1=bar
-router.get('/recipes', function (req, res) {
-	mongodb.MongoClient.connect(uri, function(err, db) {
-		if(err) {
+router.get('/recipes/random', function (req, res) {
+	console.log('random')
+	console.log(req.query);
+
+	mongodb.MongoClient.connect(uri, function (err, db) {
+		if (err) {
 			throw err;
 		}
 		var chef = db.collection('recipe');
-		chef.find({name: 'Risotto'}).toArray(function(err, docs) {
-			if(err) {
+		chef.find(req.query).toArray(function (err, docs) {
+			if (err) {
 				throw err;
 			}
-			res.json(docs);
-			console.log(docs);
+			var numDocs = docs.length;
+			var index = Math.floor((Math.random() * docs.length));
+			var randomDoc = docs[index]
+			res.json(randomDoc);
+			console.log(randomDoc);
 		})
 	});
 });
+
+// /recipes?param0=foo&param1=bar
+router.get('/recipes', function (req, res) {
+	console.log('regular')
+	console.log(req.query);
+	mongodb.MongoClient.connect(uri, function (err, db) {
+		if (err) {
+			throw err;
+		}
+		var chef = db.collection('recipe');
+		chef.find(req.query).toArray(function (err, docs) {
+			if (err) {
+				throw err;
+			}
+			res.json(docs);
+			// console.log(docs);
+		})
+	});
+});
+
+
 
 module.exports = router;
