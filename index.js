@@ -6,5 +6,5 @@ app.use(express.static(__dirname + '/public'));
 app.use(routes);
 
 app.listen(3001, function () {
-	console.log('See the magic happen at localhost:8888');
+	console.log('See the magic happen at localhost:3001');
 });
