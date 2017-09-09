@@ -36,11 +36,10 @@ router.post('/addRecipe', function (req, res) {
 	})
 });
 
-// /recipes?param0=foo&param1=bar
+/**
+ * Returns a random recipe 
+ */
 router.get('/recipes/random', function (req, res) {
-	console.log('random')
-	console.log(req.query);
-
 	mongodb.MongoClient.connect(uri, function (err, db) {
 		if (err) {
 			throw err;
@@ -59,21 +58,27 @@ router.get('/recipes/random', function (req, res) {
 	});
 });
 
-// /recipes?param0=foo&param1=bar
+/**
+ * Returns all recipes based on params passed in.
+ */
 router.get('/recipes', function (req, res) {
-	console.log('regular')
-	console.log(req.query);
 	mongodb.MongoClient.connect(uri, function (err, db) {
 		if (err) {
 			throw err;
 		}
+		var regexQuery = {};
+		for(const key of Object.keys(req.query)) {
+			console.log(key);
+			regexQuery[key] = {$regex: req.query[key], $options: 'i'}
+		}
+
 		var chef = db.collection('recipe');
-		chef.find(req.query).toArray(function (err, docs) {
+		chef.find(regexQuery).toArray(function (err, docs) {
 			if (err) {
 				throw err;
 			}
 			res.json(docs);
-			// console.log(docs);
+
 		})
 	});
 });
