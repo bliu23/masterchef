@@ -3,7 +3,6 @@ import '../../../../appStyles/fonts.css'
 
 class Recipe extends Component {
 	render() {
-		const ingredients = ['1 egg', '1 tbsp butter']
 		return (
 			<div>
 				<p className="title-small">Recipe:</p>

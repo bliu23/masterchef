@@ -7,7 +7,7 @@ class Review extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			showDetails: true
+			showDetails: this.props.showDetails
 		};
 	}
 	render() {
