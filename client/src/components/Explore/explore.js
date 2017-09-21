@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router';
+
 
 class Explore extends Component {
 
@@ -11,4 +13,4 @@ class Explore extends Component {
 	}
 }
 
-export default Explore;
+export default withRouter(Explore);

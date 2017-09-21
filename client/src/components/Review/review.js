@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Details from './ReviewDetails/details';
 import Preview from './ReviewPreview/preview';
+import { withRouter } from 'react-router';
 import './review.css';
 
 class Review extends Component {
@@ -20,4 +21,4 @@ class Review extends Component {
 	}
 }
 
-export default Review;
+export default withRouter(Review);

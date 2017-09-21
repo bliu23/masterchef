@@ -4,6 +4,7 @@ import Navbar from './../Navbar/navbar';
 import NotFound from './../NotFound/notfound';
 import App from '../../App';
 import {
+	Switch, 
 	BrowserRouter as Router,
 	Route
 } from 'react-router-dom';
@@ -14,14 +15,19 @@ class Routes extends Component {
 	render() {
 		return (
 			<div className="App">
-				<Router>
+				<Switch>
+					<Route exact path='/' component={NotFound} />
+					<Route path='/review' component={() => (<Review showDetails={true} />)} />
+					<Route path='/explore' component={Explore} />
+				</Switch>
+
+				{/* <Router>
 					<div>
 						<Route exact path='/' component={NotFound} />
 						<Route path='/review' component={() => (<Review showDetails={true} />)} />
 						<Route path='/explore' component={Explore} />
-						{/* <Route path='*' component={NotFound} /> */}
 					</div>
-				</Router>
+				</Router> */}
 
 			</div>
 		);
