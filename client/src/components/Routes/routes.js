@@ -20,15 +20,6 @@ class Routes extends Component {
 					<Route path='/review' component={() => (<Review showDetails={true} />)} />
 					<Route path='/explore' component={Explore} />
 				</Switch>
-
-				{/* <Router>
-					<div>
-						<Route exact path='/' component={NotFound} />
-						<Route path='/review' component={() => (<Review showDetails={true} />)} />
-						<Route path='/explore' component={Explore} />
-					</div>
-				</Router> */}
-
 			</div>
 		);
 	}
