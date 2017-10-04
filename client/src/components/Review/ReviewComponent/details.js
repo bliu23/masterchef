@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
 import '../../../appStyles/fonts.css'
+import './details.css';
 
-class ReviewDetails extends Component {
+class Details extends Component {
 	render() {
+		const dish = this.props.dish;
 		return (
 			<div className="review-details">
-				<p>Review details can probably go here</p>
-				<p>More images can probably go here...</p>
-				<img src="http://img.taste.com.au/x9xlREwb/taste/2016/11/cheesy-meatballs-with-spaghetti-23057-1.jpeg"/>
+				<span>{dish.name}</span><span> - {dish.description}</span>
+				<br/>
+				<a href={dish.link}>Recipe</a>
 			</div>
 		);
 	}
 }
 
-export default ReviewDetails;
+export default Details;

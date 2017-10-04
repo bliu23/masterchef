@@ -8,7 +8,7 @@ class Attendees extends Component {
 		console.log(attendees)
 		return (
 			<div className='attendees'>
-				<p className='title-small'>Attendees:</p>
+				<p className='title-medium'>Attendees:</p>
 				<p className>{attendees}</p>
 			</div>
 		);
