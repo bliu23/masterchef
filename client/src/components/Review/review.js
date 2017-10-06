@@ -11,13 +11,13 @@ class Review extends Component {
 			showDetails: this.props.showDetails
 		};
 	}
-	render() {		
+	render() {
 		const className = this.props.show ? "review" : "review hide";
 		const attendees = ['Tina', 'Vicky', 'Ken', 'Gary the snail'];
 		
 		const dish1 = {
 			name: 'Roast Chicken',
-			description: 'Super simple with just salt, pepper, type, but so DELSIH',
+			description: 'Super simple with just salt, pepper, type, but so DELISH',
 			link: 'https://www.epicurious.com/recipes/food/views/my-favorite-simple-roast-chicken-231348/amp'
 		};
 
@@ -32,8 +32,8 @@ class Review extends Component {
 				dish2
 			],
 			mainImageSrc: "https://scontent-lax3-1.xx.fbcdn.net/v/t1.0-9/21616304_10212648930612045_4781880486988506823_n.jpg?oh=f7343d47afc911adafc6b44f6a7eef1b&oe=5A4D14C3",
-
 		}
+
 		return (
 			<div className={className}>
 				<p className="title-large">Roast Chicken and Co.</p>
