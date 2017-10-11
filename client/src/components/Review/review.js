@@ -36,8 +36,10 @@ class Review extends Component {
 
 		return (
 			<div className={className}>
-				<p className="title-large">Roast Chicken and Co.</p>
-				<p className="date">09/18/17</p>
+				<div className="review-title">
+					<p className="title-large">Roast Chicken and Co.</p>
+					<p className="date">09/18/17</p>
+				</div>
 				<Attendees attendees={attendees}/>
 				<ReviewComponent review={review}/>
 			</div>

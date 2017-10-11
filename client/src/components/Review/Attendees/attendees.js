@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../../../appStyles/fonts.css'
+import './attendees.css';
 
 class Attendees extends Component {
 	render() {

@@ -1,0 +1,13 @@
+.explore {
+	.dish {
+		border: 1px solid gray;
+		border-radius: 4px;
+		width: 320px;
+		padding: 10px;
+		margin: 10px;
+
+		.dish-element {
+			margin-bottom: 5px;
+		}
+	}
+}
