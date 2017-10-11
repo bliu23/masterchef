@@ -5,7 +5,6 @@ import './attendees.css';
 class Attendees extends Component {
 	render() {
 		const attendees = this.props.attendees.join(', ');
-		console.log(attendees)
 		return (
 			<div className='attendees'>
 				<p className='title-medium'>Attendees:</p>

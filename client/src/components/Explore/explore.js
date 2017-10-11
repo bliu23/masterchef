@@ -4,9 +4,25 @@ import Dish from './Dish/dish';
 
 class Explore extends Component {
 	render() {
+		// Sample Information
+		// name
+		// main, side, appetizer, dessert
+		// notes
+		// link
 		const dish1 = {
-			name: "Swedish Meatball Sub"
-		}
+			name: 'Swedish Meatball Sub',
+			tags: ['Main', 'American', 'Sandwich'],
+			notes: 'Don\'t forget the provolone cheese!',
+			link: '#'
+		};
+		const dish2 = {
+			name: 'Broccoli Cheddar Soup',
+			tags: ['Side', 'American', 'Soup'],
+			notes: '',
+			link: '#'
+		};
+
+		const dishes = [dish1, dish2];
 		return (
 			<div className="explore">
 				<p className="title-large">Explore</p>	
@@ -16,25 +32,7 @@ class Explore extends Component {
 					<p className="dish-element">Notes</p>
 					<p className="dish-element"><a href="#">Link</a></p>
 				</div>
-				{/* <Dish /> */}
-				<div className="dish">
-					<p className="dish-element title-medium">Swedish Meatball Sub</p>
-					<div className="dish-element">
-						<span className="title-small ">Tags: </span>
-						<span>Main, American, Sandwich</span>
-					</div>
-					<div className="dish-element">
-						<span className="title-small ">Notes: </span>
-						<span>Don't forget the provolone cheese!</span>
-					</div>
-					<p className="dish-element"><a href="#">Link</a></p>
-				</div>
-				<div className="dish">
-					<p className="dish-element title-medium">Broccoli Cheddar Soup</p>
-					<p className="dish-element">Side, American, Soup </p>
-					<p className="dish-element"></p>
-					<p className="dish-element"><a href="#">Link</a></p>
-				</div>
+				{dishes.map((dish, i) => <Dish dish={dish} key={i} />)}
 			</div>
 		);
 	}

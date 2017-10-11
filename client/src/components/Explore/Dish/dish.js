@@ -3,18 +3,19 @@ import './dish.css';
 
 class Dish extends Component {
 	render() {
+		const tags = this.props.dish.tags.join(', ');
 		return (
 			<div className="dish">
-				<p className="dish-element title-medium">Swedish Meatball Sub</p>
+				<p className="dish-element title-medium">{this.props.dish.name}</p>
 				<div className="dish-element">
 					<span className="title-small ">Tags: </span>
-					<span>Main, American, Sandwich</span>
+					<span>{tags}</span>
 				</div>
 				<div className="dish-element">
 					<span className="title-small ">Notes: </span>
-					<span>Don't forget the provolone cheese!</span>
+					<span>{this.props.dish.notes}</span>
 				</div>
-				<p className="dish-element"><a href="#">Link</a></p>
+				<p className="dish-element"><a href={this.props.dish.link}>Link</a></p>
 			</div>
 		);
 	}
